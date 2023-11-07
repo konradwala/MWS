@@ -28,6 +28,7 @@ namespace StepperControlApp
             PortComboBox.ItemsSource = availablePorts;
         }
 
+        //funkcja otwierania wybranego portu COM
         private void OpenPortButton_Click(object sender, RoutedEventArgs e)
         {
             if (PortComboBox.SelectedItem != null)
