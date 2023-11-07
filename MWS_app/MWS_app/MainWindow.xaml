@@ -1,0 +1,27 @@
+﻿<Window x:Class="StepperControlApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MWS App" Height="400" Width="400">
+    
+    
+    <Grid>
+        <Button Content="↑" HorizontalAlignment="Center" VerticalAlignment="Top" Width="50" Height="50" Margin="0,20,0,0"
+                PreviewMouseDown="ArrowButton_Pressed" PreviewMouseUp="ArrowButton_Released" Tag="STEPPER2_UP"/>
+        
+        <Button Content="←" HorizontalAlignment="Left" VerticalAlignment="Center" Width="50" Height="50" Margin="20,0,0,0"
+                PreviewMouseDown="ArrowButton_Pressed" PreviewMouseUp="ArrowButton_Released" Tag="STEPPER1_LEFT"/>
+        
+        <Button Content="→" HorizontalAlignment="Right" VerticalAlignment="Center" Width="50" Height="50" Margin="0,0,20,0"
+                PreviewMouseDown="ArrowButton_Pressed" PreviewMouseUp="ArrowButton_Released" Tag="STEPPER1_RIGHT"/>
+        
+        <Button Content="↓" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="50" Height="50" Margin="0,0,0,20"
+                PreviewMouseDown="ArrowButton_Pressed" PreviewMouseUp="ArrowButton_Released" Tag="STEPPER2_DOWN"/>
+
+       
+        <ComboBox x:Name="PortComboBox" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Margin="0,80,0,0"/>
+        
+        <Button Content="Open Port" HorizontalAlignment="Center" VerticalAlignment="Top" Width="80" Height="30" Margin="0,120,0,0" Click="OpenPortButton_Click"/>
+        
+        <TextBlock x:Name="StatusTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </Grid>
+</Window>
