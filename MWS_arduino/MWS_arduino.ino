@@ -1,25 +1,25 @@
 #include <Stepper.h>
-#include <pcf8574.h>
 
-PCF8574 ex1(0x20);
 
-// Define the pins for the first stepper motor
-#define motor2Pin1 6
-#define motor2Pin2 7
-#define motor2Pin3 8
-#define motor2Pin4 9
 
-// Define the pins for the second stepper motor
-#define motor1Pin1 10
-#define motor1Pin2 11
-#define motor1Pin3 12
-#define motor1Pin4 13
 
-// Define the pins for the third stepper motor
-#define motor3Pin1 2
-#define motor3Pin2 3
-#define motor3Pin3 4
-#define motor3Pin4 5
+// mid 
+#define motor2Pin1 0
+#define motor2Pin2 3
+#define motor2Pin3 13
+#define motor2Pin4 2
+
+// down work
+#define motor1Pin1 4
+#define motor1Pin2 5
+#define motor1Pin3 6
+#define motor1Pin4 7
+
+// up work
+#define motor3Pin1 8
+#define motor3Pin2 9
+#define motor3Pin3 10
+#define motor3Pin4 11
 
 // Define the number of steps per revolution for the stepper motors
 const int stepsPerRevolution = 32;
@@ -28,16 +28,11 @@ int stepMinus = -1;
 
 Stepper stepper1(stepsPerRevolution, motor1Pin1, motor1Pin3, motor1Pin2, motor1Pin4);
 Stepper stepper2(stepsPerRevolution, motor2Pin1, motor2Pin3, motor2Pin2, motor2Pin4);
-Stepper stepper2(stepsPerRevolution, motor3Pin1, motor3Pin3, motor3Pin2, motor3Pin4);
+Stepper stepper3(stepsPerRevolution, motor3Pin1, motor3Pin3, motor3Pin2, motor3Pin4);
 
 void setup() {
   // Initialize the serial communication
   Serial.begin(9600);
-
-  for(int i=0; i<8; i++)
-  {
-    pinMode(ex1, i, INPUT_PULLUP);
-  }
 
   // Set the motor speed (RPM)
   stepper1.setSpeed(800);
